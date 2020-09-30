@@ -1,0 +1,30 @@
+<div class="column is-flex is-one-third">
+  <div class="card">
+    <% if customer.image.present? %>
+    <div class="card-image">
+      <figure class="image">
+        <%= image_tag customer.image %>
+      </figure>
+    </div>
+    <% end %>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4"><%= customer.name %></p>
+          <div class="subtitle is-6">
+            <% if customer.email.present? %>
+            <p><strong>Email: </strong><%= mail_to customer.email %></p>
+            <% end %>
+            <% if customer.phone.present? %>
+            <p><strong>Phone: </strong><%= customer.phone %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="content">
+        <p><%= customer.notes %></p>
+      </div>
+    </div>
+  </div>
+</div>
