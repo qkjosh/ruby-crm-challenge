@@ -1,3 +1,11 @@
+<div class="tabs">
+  <ul>
+    <li class="is-active"><%= link_to "Customers", customers_path %></li>
+    <li><%= link_to "Alphabetized", controller: "customers", action: "alphabetized" %></li>
+    <li><%= link_to "Missing Email", controller: "customers", action: "missing_email" %></li>
+  </ul>
+</div>
+<h2 class="subtitle">All customers are displayed below, in order of creation.</h2>
 <div class="columns is-multiline">
 <%= render  partial: 'customer',
             collection: @customers %>

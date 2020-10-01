@@ -1,0 +1,12 @@
+<div class="tabs">
+  <ul>
+    <li><%= link_to "Customers", customers_path %></li>
+    <li><%= link_to "Alphabetized", controller: "customers", action: "alphabetized" %></li>
+    <li class="is-active"><%= link_to "Missing Email", controller: "customers", action: "missing_email" %></li>
+  </ul>
+</div>
+<h2 class="subtitle">All customers without emails are displayed below.</h2>
+<div class="columns is-multiline">
+<%= render  partial: 'customer',
+            collection: @customers %>
+</div>
